@@ -810,6 +810,7 @@ require('lazy').setup({
       -- Prefer git instead of curl in order to improve connectivity in some environments
       require('nvim-treesitter.install').prefer_git = true
       ---@diagnostic disable-next-line: missing-fields
+<<<<<<< HEAD
 
       require('nvim-treesitter.configs').setup(opts)
 
@@ -886,6 +887,81 @@ require('lazy').setup({
       --   --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
       --   --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
       -- }
+=======
+      require('nvim-treesitter.configs').setup {
+        ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc' },
+        -- Autoinstall languages that are not installed
+        auto_install = true,
+        highlight = { enable = true },
+        indent = { enable = true },
+
+        -- Incremental selection
+        incremental_selection = {
+          enable = true,
+          keymaps = {
+            init_selection = '<c-space>',
+            node_incremental = '<c-space>',
+            scope_incremental = '<c-s>',
+            node_decremental = '<M-space>',
+          },
+        },
+
+        --     textobjects = {
+        --       select = {
+        --         enable = true,
+        --         lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
+        --         keymaps = {
+        --           -- You can use the capture groups defined in textobjects.scm
+        --           ['aa'] = '@parameter.outer',
+        --           ['ia'] = '@parameter.inner',
+        --           ['af'] = '@function.outer',
+        --           ['if'] = '@function.inner',
+        --           ['ac'] = '@class.outer',
+        --           ['ic'] = '@class.inner',
+        --         },
+        --       },
+        --       move = {
+        --         enable = true,
+        --         set_jumps = true, -- whether to set jumps in the jumplist
+        --         goto_next_start = {
+        --           [']m'] = '@function.outer',
+        --           [']]'] = '@class.outer',
+        --         },
+        --         goto_next_end = {
+        --           [']M'] = '@function.outer',
+        --           [']['] = '@class.outer',
+        --         },
+        --         goto_previous_start = {
+        --           ['[m'] = '@function.outer',
+        --           ['[['] = '@class.outer',
+        --         },
+        --         goto_previous_end = {
+        --           ['[M'] = '@function.outer',
+        --           ['[]'] = '@class.outer',
+        --         },
+        --       },
+        --       swap = {
+        --         enable = true,
+        --         swap_next = {
+        --           ['<leader>a'] = '@parameter.inner',
+        --         },
+        --         swap_previous = {
+        --           ['<leader>A'] = '@parameter.inner',
+        --         },
+        --       },
+        --     },
+        --   },
+
+        -- TODO: fold işine bak
+
+        -- There are additional nvim-treesitter modules that you can use to interact
+        -- with nvim-treesitter. You should go explore a few and see what interests you:
+        --
+        --    - Incremental selection: Included, see :help nvim-treesitter-incremental-selection-mod
+        --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
+        --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+      }
+>>>>>>> e414746 (Combine with my old config)
     end,
   },
 
@@ -899,16 +975,25 @@ require('lazy').setup({
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
   require 'kickstart.plugins.debug',
+<<<<<<< HEAD
   require 'kickstart.plugins.indent_line',
   require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+=======
+  -- require 'kickstart.plugins.indent_line',
+  -- require 'kickstart.plugins.lint',
+  -- require 'kickstart.plugins.autopairs',
+  -- require 'kickstart.plugins.neo-tree',
+  -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+>>>>>>> e414746 (Combine with my old config)
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
+<<<<<<< HEAD
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
   { import = 'custom.plugins' },
 }, {
@@ -932,6 +1017,11 @@ require('lazy').setup({
     },
   },
 })
+=======
+  --    For additional information see: :help lazy.nvim-lazy.nvim-structuring-your-plugins
+  { import = 'custom.plugins' },
+}
+>>>>>>> 8779f5f (Combine with my old config)
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
