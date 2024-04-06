@@ -797,7 +797,6 @@ require('lazy').setup({
       -- Prefer git instead of curl in order to improve connectivity in some environments
       require('nvim-treesitter.install').prefer_git = true
       ---@diagnostic disable-next-line: missing-fields
-<<<<<<< HEAD
       require('nvim-treesitter.configs').setup {
         ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc' },
         -- Autoinstall languages that are not installed
@@ -805,18 +804,6 @@ require('lazy').setup({
         highlight = { enable = true },
         indent = { enable = true },
 
-=======
-
-      -- require('nvim-treesitter.configs').setup(opts)
-
-      require('nvim-treesitter.configs').setup {
-        ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc' },
-        -- Autoinstall languages that are not installed
-        auto_install = true,
-        highlight = { enable = true },
-        indent = { enable = true },
-
->>>>>>> 17dc24a (Combine with my old config)
         -- Incremental selection
         incremental_selection = {
           enable = true,
